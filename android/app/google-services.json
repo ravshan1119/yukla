@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1034822826042",
+    "project_id": "yukla-1e7e7",
+    "storage_bucket": "yukla-1e7e7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1034822826042:android:e40d64031aeab46cd41d03",
+        "android_client_info": {
+          "package_name": "com.example.yukla"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1034822826042-06mp6lf09c6a2pt8kk1v165fd7g2grc1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.yukla",
+            "certificate_hash": "8ac4a4434e2476f7310474e6c1c45a67c11f13b4"
+          }
+        },
+        {
+          "client_id": "1034822826042-022ec52l4ht3840tnuch0qabm8vnheim.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANtQDNhV0WnQ_XRY_a64MMob55odqEb2k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1034822826042-022ec52l4ht3840tnuch0qabm8vnheim.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
