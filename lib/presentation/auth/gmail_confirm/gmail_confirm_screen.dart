@@ -45,23 +45,29 @@ class _GmailConfirmScreenState extends State<GmailConfirmScreen> {
               //   widthFactor: 1,
               //   child: PinputExample(),
               // ),
-              GlobalTextField(
-                hintText: "Code",
-                keyboardType: TextInputType.text,
-                textInputAction: TextInputAction.next,
-                textAlign: TextAlign.start,
-                onChanged: (v) {
-                  code = v;
-                },
+              Padding(
+                padding: EdgeInsets.all(24.0.h),
+                child: GlobalTextField(
+                  hintText: "Code",
+                  keyboardType: TextInputType.text,
+                  textInputAction: TextInputAction.next,
+                  textAlign: TextAlign.start,
+                  onChanged: (v) {
+                    code = v;
+                  },
+                ),
               ),
-              GlobalButton(
-                color: Colors.black,
-                textColor: Colors.white,
-                borderColor: Colors.black,
-                title: "Confirm",
-                onTap: () {
-                  context.read<AuthCubit>().confirmGmail(code);
-                },
+              Padding(
+                padding: EdgeInsets.all(24.0.h),
+                child: GlobalButton(
+                  color: Colors.black,
+                  textColor: Colors.white,
+                  borderColor: Colors.black,
+                  title: "Confirm",
+                  onTap: () {
+                    context.read<AuthCubit>().confirmGmail(code);
+                  },
+                ),
               ),
               const SizedBox(height: 50),
               Row(
@@ -79,6 +85,24 @@ class _GmailConfirmScreenState extends State<GmailConfirmScreen> {
                   GestureDetector(
                     onTap: () {
                       // Navigator.pushNamed(context, RouteNames.loginScreen);
+                      Navigator.pop(context);
+                      if (context.read<UserDataCubit>().canRegister()) {
+                        context.read<AuthCubit>().sendCodeToGmail(
+                              context
+                                  .read<UserDataCubit>()
+                                  .state
+                                  .userModel
+                                  .email,
+                              context
+                                  .read<UserDataCubit>()
+                                  .state
+                                  .userModel
+                                  .password,
+                            );
+                      } else {
+                        showErrorMessage(
+                            message: "Maydonlar to'liq emas", context: context);
+                      }
                     },
                     child: Text(
                       "Please resend",
